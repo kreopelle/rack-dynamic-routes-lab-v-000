@@ -8,6 +8,8 @@ class Application
       item_name = req.path.split("/items/").last
       item = Items.find{|i| i.name = item_name}
       item.price
+    else
+      resp.write "404"
 
     resp.finish
   end
